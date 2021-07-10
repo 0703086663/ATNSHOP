@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='Page X' }}
+
+<body>
+    {{>header  title=this.title}}
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-padding">
+        <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+        <b><span class="w3-text-white w3-hide-small" style="font-size:150px">ATN SHOP<br>TOY STORY 4</span></b>
+        <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>ATN SHOP</span>
+        <p><a href="/product" class="w3-button w3-xxlarge w3-black" id="seepro">Let me see the products</a></p>
+    </div>
+    </header>
+    <main>
+    
+    <!-- Container -->
+    <div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+        <div class="w3-content">
+            <h1 class="w3-center w3-jumbo" style="margin-bottom:none;margin-top:none">About</h1>
+            <h1><b>Opening Hours</b></h1>
+
+            <div class="w3-row">
+                <div class="w3-col s6">
+                    <p>Mon & Tue CLOSED</p>
+                    <p>Wednesday 10.00 - 24.00</p>
+                    <p>Thursday 10:00 - 24:00</p>
+                </div>
+                <div class="w3-col s6">
+                    <p>Friday 10:00 - 12:00</p>
+                    <p>Saturday 10:00 - 23:00</p>
+                    <p>Sunday Closed</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </main>
+    
+
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='Page X' }}
+
+<body>
+    {{>header  title=this.title}}
+
+    <main>
+        <div id="login" style="font-size: 30px; font-weight:bold">
+          <h1 style="text-align: center; color:white">LOGIN</h1>
+            <div class="container" style="height:540px;">
+              <p>Please fill in this form to login your an account.</p>
+
+                  <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" id="se" required>
+                  <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="sp" required>
+                      <button id="logbut" type="submit" onclick="login()">Login</button>
+
+                <span>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </span>
+              <span class="psw" style="color:black">Forgot <a href="SignUp.html">password?</a></span>
+
+          </div>
+          </div>
+    </main>
+    
+
+    {{>footer}}
+</body>
+
+</html>

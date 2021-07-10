@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='Page X' }}
+
+<body>
+    {{>header  title=this.title}}
+    <main>
+        <div class="container" style="margin-top:60px;font-size: 30px; font-weight:bold">
+            <H1 height="150px">{{title}}</H1>
+            <form method="get" action="\product"><button type="submit">Back to Product page</button></form>
+            <form action="/product" method="POST" >
+                <b><BR> ProductName:
+                <input style="font-size: 30px; height:40px;" type="text" class="form-control" name="ProductName" id="ProductName">
+                <BR> ProductCode:
+                <input style="font-size: 30px; height:40px;" type="number" class="form-control" name="ProductCode" id="ProductCode">
+                <BR> Information:
+                <textarea  style="font-size: 30px; height:40px;" type="text" class="form-control" name="Information" id="Information" rows="3"></textarea>
+                <BR> Price:
+                <input style="font-size: 30px; height:40px;" type="number" class="form-control" name="Price" id="Price">
+                <BR> Unit:
+                <input style="font-size: 30px; height:40px;" type="number" class="form-control" name="Unit" id="Unit">
+                <BR> ImgLink:
+                <input style="font-size: 30px; height:40px;" type="text" class="form-control" name="ImgLink" id="ImgLink">
+                <input type="submit" class="btn btn-primary" value="Create"></b>
+            </form>
+        </div>        
+    </main>
+    
+
+    {{>footer}}
+</body>
+
+</html>
