@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 /////////////////////////////////////////////////.
 const userName = "atn-thanh";
-const userPassword = "abc123123";
+const userPassword = "SmYBQjs1WFEcLNHG";
 
 const dbName = "ATN_SHOP";
  
