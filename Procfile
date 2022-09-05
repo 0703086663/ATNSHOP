@@ -1,2 +1,2 @@
-web:   node   AppServer.js
+web:   node ./AppServer.js
 
