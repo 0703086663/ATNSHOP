@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+{{>head title=this.title subpage='Page X' }}
+
+<body>
+    {{>header  title=this.title}}
+
+<div id="layoutSidenav_content" style="margin-top: 60px">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">{{title}} Tables</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
+                <li class="breadcrumb-item active">Tables</li>
+            </ol>
+
+            <a href="/product/new">
+                <button class="btn btn-dark">Create One</button>
+            </a>
+            <div class="mb-2">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Product Database
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Stocks</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each product}}
+                                <tr>
+                                    <td><img style="width: 60px; height: 60px" src="{{this.ImgLink}}" alt="{{this.ProductName}}"></td>
+                                    <td>{{this.ProductName}}</td>
+                                    <td>{{this.Information}}</td>
+                                    <td>{{this.Unit}} pcs</td>
+                                    <td>{{this.Price}}</td>
+                                    <td>
+                                        <a href="/product/{{this.ProductCode}}/edit">
+                                            <button class="btn btn-dark">Edit</button>
+                                        </a>
+                                        <a href="/product/{{this.ProductCode}}/delete">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+        
+    {{>footer}}
+</body>
+
+</html>

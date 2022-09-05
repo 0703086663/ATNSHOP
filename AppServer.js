@@ -80,7 +80,9 @@ app.use("/product", ProductController);
 const OrderController = require("./controllers/OrderController");
 app.use("/order", OrderController);
 
-
+// --------- Manage
+const ManageController = require("./controllers/ManageController");
+app.use("/manage", ManageController);
 
 // --------- Payment
 const PaymentController = require("./controllers/PaymentController");
@@ -98,8 +100,8 @@ app.use("/login", LoginController);
 
 
 // --------- Logout
-const LogoutController = require("./controllers/LogoutController");
-app.use("/logout", LogoutController);
+const RegisterController = require("./controllers/RegisterController");
+app.use("/register", RegisterController);
 
 
 

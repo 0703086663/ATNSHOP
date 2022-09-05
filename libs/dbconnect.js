@@ -5,15 +5,12 @@ const mongoose = require("mongoose");
 /// Thông tin Database Collection / Tables
 
 /////////////////////////////////////////////////.
-const userName = "atn-thanh";
-const userPassword = "SmYBQjs1WFEcLNHG";
-
-const dbName = "ATN_SHOP";
- 
+const userName = "admin";
+const userPassword = "admin";
 
 const url = "mongodb+srv://" +
     userName + ":" + userPassword +     
-    "@cluster0.jfvvt.mongodb.net/" + dbName;
+    "@cluster0.hgygf.mongodb.net/?retryWrites=true&w=majority";
 
 ///////////////////////////////////////////////////a
 function connectDB(xURL) {
