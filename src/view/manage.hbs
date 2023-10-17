@@ -44,12 +44,8 @@
                                     <td>{{this.Unit}} pcs</td>
                                     <td>{{this.Price}}</td>
                                     <td>
-                                        <a href="/product/{{this.ProductCode}}/edit">
-                                            <button class="btn btn-dark">Edit</button>
-                                        </a>
-                                        <a href="/product/{{this.ProductCode}}/delete">
-                                            <button class="btn btn-danger">Delete</button>
-                                        </a>
+                                        <a href="/product/{{this._id}}/edit">Edit</a> |
+                                        <a href="/product/{{this._id}}/delete">Delete</a>
                                     </td>
                                 </tr>
                                 {{/each}}
