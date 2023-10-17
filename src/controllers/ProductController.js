@@ -6,8 +6,35 @@ const {
   mongooseToObject,
 } = require("../util/mongoose");
 
-router.get("/", getProduct);
+router.get("/search", searchProduct);
+function searchProduct(req, res) {
+  try {
+    if (req.query.query === null || req.query.query === undefined) {
+      return res.render("products/product-detail", {
+        title: "Detail",
+        product: null,
+      });
+    }
+    const query = req.query.query;
+    Products.findOne({ ProductName: query }).then((product) => {
+      if (product) {
+        return res.render("products/product-detail", {
+          title: product.ProductName,
+          product: mongooseToObject(product),
+        });
+      } else {
+        return res.render("products/product-detail", {
+          title: "Detail",
+          product: null,
+        });
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
 
+router.get("/", getProduct);
 function getProduct(req, res) {
   Products.find({})
     .then((product) => {
@@ -25,13 +52,11 @@ function getProduct(req, res) {
 
 /// - NEW --> Create
 router.get("/new", getNewProduct);
-
 function getNewProduct(req, res) {
   res.render("products/product-new", { title: "Create a New Product" });
 }
 /// - CRUD - C - Create / Post - Add
 router.post("/store", createNewProduct);
-
 function createNewProduct(req, res) {
   let newProducts = new Products({
     ProductName: req.body.ProductName,
@@ -46,7 +71,6 @@ function createNewProduct(req, res) {
 
 /// - reEDIT --> Update
 router.get("/:id/edit", getEditProduct);
-
 function getEditProduct(req, res) {
   Products.findOne({ _id: req.params.id }).then((product) => {
     return res.render("products/product-edit", {
@@ -58,7 +82,6 @@ function getEditProduct(req, res) {
 
 /// - CRUD - U - Update / Put
 router.post("/:id/edit", updateProduct);
-
 function updateProduct(req, res) {
   Products.findOneAndUpdate({ _id: req.params.id }, req.body)
     .then((product) => res.redirect("back"))
@@ -68,7 +91,6 @@ function updateProduct(req, res) {
 
 /// - CRUD - D - Delete
 router.get("/:id/delete", deleteProduct);
-
 function deleteProduct(req, res) {
   Products.findOneAndDelete({ _id: req.params.id })
     .then(() => res.redirect("back"))

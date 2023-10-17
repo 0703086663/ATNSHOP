@@ -8,6 +8,10 @@
     <main>
         <ol>
             <div id="producttop"class="container" style="margin-top: 60px;">
+            <form action="/product/search">
+                <input type="text" placeholder="Searching by product name..." name="query">
+                <button>Search</button>
+            </form>
             {{#each product}}
             <li id="productsList" style="display:inline-block">
                 <div class="card">
